@@ -5,7 +5,7 @@ idade=int(input("diga a sua idade:"))
 nacionalidade=str(input("Aonde Você Mora?"))
 experiencia_anos = int(input("Digite a experiência em anos:"))
 
-if idade >= 18 and experiencia_anos >= 2 and nacionalidade >= "brasil":
+if idade >= 18 and experiencia_anos >= 2 and nacionalidade == "brasil":
 
     tela = (nome,idade,nacionalidade,experiencia_anos)
     print("você é elegível para o emprego.")
