@@ -1,23 +1,12 @@
-import math
+numero = 23  # número que queremos verificar se é primo
 
-# Número a ser verificado
-numero = 17
-
-# Verificar se é menor ou igual a 1
-if numero <= 1:
-    eh_primo = False
-else:
-    eh_primo = True
-
-    # Verificar se é divisível por algum número além de 1 e ele mesmo
-    limite = int(math.sqrt(numero)) + 1
-    for i in range(2, limite):
+if numero > 1:  # primos são maiores que 1
+    # verificando se há algum divisor além de 1 e do próprio número
+    for i in range(2, int(numero**0.5) + 1):
         if numero % i == 0:
-            eh_primo = False
+            print(f'{numero} não é um número primo.')
             break
-
-# Resultado
-if eh_primo:
-    print(f"{numero} é primo.")
+    else:
+        print(f'{numero} é um número primo.')
 else:
-    print(f"{numero} não é primo.")
+    print(f'{numero} não é um número primo.')
