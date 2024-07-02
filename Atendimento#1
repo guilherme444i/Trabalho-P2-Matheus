@@ -1,27 +1,29 @@
-from collections import deque
+# Simulação de uma fila de atendimento
+fila_de_atendimento = []  # Lista vazia para armazenar os clientes
 
-fila_de_atendimento = deque()
+# Adicionar clientes à fila
+fila_de_atendimento.append("Cliente 1")
+fila_de_atendimento.append("Cliente 2")
+fila_de_atendimento.append("Cliente 3")
+fila_de_atendimento.append("Cliente 4")
 
-def adicionar_cliente(nome):
-    """ Adiciona um cliente ao final da fila. """
-    fila_de_atendimento.append(nome)
-    print(f"Cliente {nome} adicionado ao final da fila.")
+print("Fila atual:", fila_de_atendimento)
 
-def atender_cliente():
-    """ Remove e retorna o cliente que está no início da fila. """
-    if fila_de_atendimento:
-        cliente = fila_de_atendimento.popleft()
-        print(f"Cliente {cliente} foi atendido.")
-        return cliente
-    else:
-        print("Não há clientes para atender.")
+# Atender clientes (remover cliente do início da fila)
+cliente_atual = fila_de_atendimento.pop(0)
+print(f"Atendendo o cliente: {cliente_atual}")
 
-# Exemplo de utilização:
-adicionar_cliente("João")
-adicionar_cliente("Maria")
-adicionar_cliente("José")
+# Verificar fila após atendimento
+print("Fila atualizada:", fila_de_atendimento)
 
-atender_cliente()
-atender_cliente()
-atender_cliente()
-atender_cliente()
+# Adicionar mais clientes à fila
+fila_de_atendimento.append("Novo Cliente")
+fila_de_atendimento.append("Outro Cliente")
+
+print("Fila atualizada com novos clientes:", fila_de_atendimento)
+
+# Atender mais clientes
+cliente_atual = fila_de_atendimento.pop(0)
+print(f"Atendendo o cliente: {cliente_atual}")
+
+print("Fila atualizada após novo atendimento:", fila_de_atendimento)
